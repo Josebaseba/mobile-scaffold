@@ -19,21 +19,17 @@ module.exports = function(grunt){
     source: {
 
       js: [
-        '<%= meta.assets %>/js/**.js',
-        '<%= meta.assets %>/js/utils/**.js',
-        '<%= meta.assets %>/js/models/**.js',
-        '<%= meta.assets %>/js/collections/**.js',
-        '<%= meta.assets %>/js/views/**.js',
-        '<%= meta.assets %>/js/routers/**.js',
-      ],
-
-      templates: [
-        '<%= meta.assets %>/templates/**.html'
+        '<%= meta.assets %>/js/*.js',
+        '<%= meta.assets %>/js/utils/*.js',
+        '<%= meta.assets %>/js/models/*.js',
+        '<%= meta.assets %>/js/collections/*.js',
+        '<%= meta.assets %>/js/views/*.js',
+        '<%= meta.assets %>/js/routers/*.js'
       ],
 
       styles: [
-        '<%= meta.assets %>/styles/theme/**.css',
-        '<%= meta.assets %>/styles/**.css'
+        '<%= meta.assets %>/styles/theme/*.css',
+        '<%= meta.assets %>/styles/*.css'
       ],
 
       components_fonts: [
@@ -55,7 +51,7 @@ module.exports = function(grunt){
         'bower_components/backbone/backbone.js',
         'bower_components/G/G.js',
         'bower_components/ratchet/js/ratchet.js',
-        '<%= meta.assets %>/js/lib/**.js'
+        '<%= meta.assets %>/js/lib/*.js'
       ]
 
     },
@@ -112,14 +108,6 @@ module.exports = function(grunt){
 
         files: [
           {expand: true, src: '<%= source.components_css %>', dest: '<%= meta.assets %>/styles/ratchet', filter: 'isFile', flatten: true}
-        ]
-
-      },
-
-      templates: {
-
-        files: [
-          {expand: true, src: '<%= source.templates %>', dest: '<%= meta.package %>/templates', filter: 'isFile', flatten: true}
         ]
 
       },
@@ -238,14 +226,6 @@ module.exports = function(grunt){
         options: {livereload: true},
         files: ['<%= meta.assets %>/styles/ratchet/**.css'],
         tasks: ['cssmin:ratchet_styles']
-
-      },
-
-      templates: {
-
-        options: {livereload: true},
-        files: ['<%= source.templates %>'],
-        tasks: ['copy:templates']
 
       }
 

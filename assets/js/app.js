@@ -1,11 +1,30 @@
+
+var app = {
+
+    views       : {},
+    models      : {},
+    collections : {},
+    routers     : {},
+    utils       : {}
+
+};
+
 $(function(){
 
-  var app = app || {};
-
   console.log('=========== APP ===========');
+  console.log('===========================');
+  console.log('APP:', app);
+  console.log('===========================');
+  console.log('========= LOADED ==========');
 
-  console.log('APP', app);
+  var templates = [];
 
-  console.log('========= LOADED =========');
+  app.utils.templates.load(templates, function viewsLoaded(results){
+
+    _.each(results, function(result){
+      if(result[0]) console.error('Error loading', result[0], 'template.');
+    });
+
+  });
 
 });
