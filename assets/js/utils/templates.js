@@ -1,5 +1,19 @@
 app.utils.templates = (function(){
 
+  var addTemplates = function(view){
+
+    var promise = new G.Promise();
+
+    G.ajax('GET', 'templates/' + view + '.html').then(function saveTemplate(err, data){
+      if(err) return promise.done(view);
+      app.views[view].prototype.template = _.template(data);
+      return promise.done(null, view);
+    });
+
+    return promise;
+
+  };
+
   var load = function(views, done) {
 
     var templates = [];
@@ -19,13 +33,3 @@ app.utils.templates = (function(){
   };
 
 })();
-
-function addTemplates(view){
-  var promise = new G.Promise();
-  G.ajax('GET', 'templates/' + view + '.html').then(function saveTemplate(err, data){
-    if(err) return promise.done(view);
-    app.views[view].prototype.template = _.template(data);
-    return promise.done(null, view);
-  });
-  return promise;
-}
