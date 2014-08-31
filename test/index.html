@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Mocha Tests</title>
+  <link rel="stylesheet" href="lib/mocha.css" />
+</head>
+<body>
+  <div id="mocha"></div>
+
+  <!-- LIBRARIES -->
+  <script src="lib/zepto.min.js"></script>
+  <script src="lib/underscore.js"></script>
+  <script src="lib/backbone.js"></script>
+  <script src="lib/G.js"></script>
+  <script src="lib/should.js"></script>
+  <script src="lib/mocha.js"></script>
+  <!-- END OF LIBRARIES -->
+
+  <script>mocha.setup('bdd')</script>
+
+  <!-- TESTING FILES -->
+  <script src="bdd/test.example.js"></script>
+  <!-- END OF TESTING FILES -->
+
+
+  <script>
+    mocha.checkLeaks();
+    mocha.globals(['Zepto', '_', 'Backbone', 'G', 'should']);
+    mocha.run();
+  </script>
+</body>
+</html>

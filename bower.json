@@ -1,0 +1,26 @@
+{
+  "name": "NAME",
+  "version": "0.0.1",
+  "authors": [
+    "Joseba Legarreta - @josebaseba"
+  ],
+  "description": "DESCRIPTION",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "backbone": "~1.1.2",
+    "zepto": "~1.1.4",
+    "G": "git://github.com/Josebaseba/G",
+    "ratchet": "~2.0.2"
+  },
+  "devDependencies": {
+    "mocha": "~1.21.4",
+    "should": "~3.3.1"
+  }
+}
