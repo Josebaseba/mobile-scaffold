@@ -1,9 +1,5 @@
-describe('Example', function(){
-  describe('#First step in example', function(){
-    it('should be a string', function(done){
-      "example".should.be.instanceOf(String).and.have.length(7);
-      done();
-    });
+describe('Globals', function(){
+  describe('#Check if libraries are included', function(){
     it('Backbone should exist and be an object', function(done){
       Backbone.should.be.instanceOf(Object);
       done();
