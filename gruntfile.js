@@ -50,7 +50,7 @@ module.exports = function(grunt){
         'bower_components/underscore/underscore.js',
         'bower_components/backbone/backbone.js',
         'bower_components/G/G.js',
-        'bower_components/ratchet/js/ratchet.js',
+        'bower_components/ratchet/dist/js/ratchet.js',
         '<%= meta.assets %>/js/lib/*.js'
       ]
 
